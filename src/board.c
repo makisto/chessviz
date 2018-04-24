@@ -59,5 +59,37 @@ int main() {
 		}
 		printf("\n");
 	}
+	int x1,x2,y1,y2;
+	do{
+	scanf("%d%d", &x1,&x2);	
+	scanf("%d%d", &y1,&y2);	
+	board[y1-1][y2-1] = board[x1-1][x2-1];	
+	board[x1-1][x2-1] = ' ';
+		for (int i = 7; i >= -1; i--)
+	{
+		printf("  ---------------------------------\n");
+		for (int j = 8; j > -1; j--)
+		{
+			if (j > 7 && i < 0)
+			{
+				printf("   ");
+			}
+			else  if (j > 7)
+			{
+				printf("%d |", i + 1);
+			}
+			else if (i < 0)
+			{
+				printf(" %c  ", 'H' - j);
+			}
+			else
+			{
+				printf(" %c |", board[7 - j][i]);
+			}
+
+		}
+		printf("\n");
+	}
+	}while(1);
 return 0;
 }
