@@ -1,4 +1,1 @@
-#include <stdio.h>
-main(){
-printf("8 r n b q k b n r\n7 p p p p p p p p\n6\n5\n4\n3\n2 P P P P P P P P\n 1 R N B Q K B N R\n a b c d e f g h")
-}
+Status:[![Build Status](https://travis-ci.org/makisto/chessviz.svg?branch=master)](https://travis-ci.org/makisto/chessviz)
