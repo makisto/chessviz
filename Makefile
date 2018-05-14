@@ -1,6 +1,8 @@
 CXX=gcc
 CFLAGS =  -c -Wall -Werror -std=c99
 FLAGS =  -Wall -Werror -std=c99
+BUILD = build/p.o build/P.o build/board.o build/rook.o build/horse.o build/el.o build/king.o build/queen.o
+SRC = src/p.h src/P.h src/board.h src/rook.h src/horse.h src/el.h src/king.h src/queen.h
 
 .PHONY: clean
 
@@ -10,10 +12,10 @@ default: bin/chess
 
 test: bin/chess_test
 
-bin/chess: build/main.o build/p.o build/P.o build/board.o
-	$(CXX) $(FLAGS) build/main.o build/p.o build/P.o build/board.o -o bin/chess
+bin/chess: build/main.o $(BUILD)
+	$(CXX) $(FLAGS) build/main.o $(BUILD) -o bin/chess
 
-build/main.o: src/main.c src/p.h src/P.h src/board.h
+build/main.o: src/main.c $(SRC)
 	$(CXX) $(CFLAGS) src/main.c -o build/main.o
 
 build/p.o: src/p.c src/p.h
@@ -25,10 +27,25 @@ build/P.o: src/P.c src/P.h
 build/board.o: src/board.c src/board.h
 	$(CXX) $(CFLAGS) src/board.c -o build/board.o
 
-bin/chess_test:build/main_test.o build/p.o build/P.o build/board.o
-	$(CXX) $(FLAGS) build/main_test.o build/p.o build/P.o build/board.o -o bin/chess_test
+build/rook.o: src/rook.c src/rook.h
+	$(CXX) $(CFLAGS) src/rook.c -o build/rook.o
 
-build/main_test.o:test/main.c thirdparty/ctest.h src/p.h src/P.h src/board.h
+build/horse.o: src/horse.c src/horse.h
+	$(CXX) $(CFLAGS) src/horse.c -o build/horse.o
+
+build/el.o: src/el.c src/el.h
+	$(CXX) $(CFLAGS) src/el.c -o build/el.o
+
+build/king.o: src/king.c src/king.h
+	$(CXX) $(CFLAGS) src/king.c -o build/king.o
+
+build/queen.o: src/queen.c src/queen.h
+	$(CXX) $(CFLAGS) src/queen.c -o build/queen.o
+
+bin/chess_test:build/main_test.o $(BUILD)
+	$(CXX) $(FLAGS) build/main_test.o $(BUILD) -o bin/chess_test
+
+build/main_test.o:test/main.c thirdparty/ctest.h $(SRC)
 	$(CXX) $(CFLAGS) -I thirdparty -I src -c test/main.c -o build/main_test.o
 
 build:
