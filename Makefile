@@ -55,4 +55,4 @@ bin:
 	mkdir bin
 
 clean:
-	-rm -rf build bin
+	-rm -rf build/*.o
