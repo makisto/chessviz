@@ -54,7 +54,6 @@ if ((k[0] == i) && (k[1] == j) && (k[3] == l) && (k[4] == h) && (s[c][a] == 'R')
     if ((c-d) == (m+1)) {
     s[d][b] = s[c][a]; 
     s[c][a] = 32;  
-    system("clear"); 
     flag1 = 0;
 }
 }
@@ -65,7 +64,6 @@ else if (c < d) {
     if ((d-c) == (m+1)) {
     s[d][b] = s[c][a]; 
     s[c][a] = 32; 
-    system("clear"); 
     flag1 = 0;
 }
 }
@@ -76,7 +74,6 @@ else if (a > b) {
     if ((a-b) == (m+1)) {
     s[d][b] = s[c][a]; 
     s[c][a] = 32; 
-    system("clear"); 
     flag1 = 0;
 }
 }
@@ -87,7 +84,6 @@ else if (a < b) {
     if ((b-a) == (m+1)) {
     s[d][b] = s[c][a]; 
     s[c][a] = 32; 
-    system("clear"); 
     flag1 = 0;
 }
 }
@@ -155,7 +151,6 @@ if ((k[0] == i) && (k[1] == j) && (k[3] == l) && (k[4] == h) && (s[c][a] == 'r')
     if ((c-d) == (m+1)) {
     s[d][b] = s[c][a]; 
     s[c][a] = 32;  
-    system("clear"); 
     flag1 = 1;
 }
 }
@@ -166,7 +161,6 @@ else if (c < d) {
     if ((d-c) == (m+1)) {
     s[d][b] = s[c][a]; 
     s[c][a] = 32; 
-    system("clear"); 
     flag1 = 1;
 }
 }
@@ -177,7 +171,6 @@ else if (a > b) {
     if ((a-b) == (m+1)) {
     s[d][b] = s[c][a]; 
     s[c][a] = 32; 
-    system("clear"); 
     flag1 = 1;
 }
 }
@@ -187,8 +180,7 @@ else if (a < b) {
     if (s[c][z] == 32) m++; 
     if ((b-a) == (m+1)) {
     s[d][b] = s[c][a]; 
-    s[c][a] = 32; 
-    system("clear"); 
+    s[c][a] = 32;  
     flag1 = 1;
 }
 }

@@ -35,7 +35,7 @@ while (1){
     z7 = horse(k,s);
     z9 = el(k,s);
     z11 = king(k,s);
-    z13 = queen(k,s);
+    z13 = queen(k, s);
     if ((z1 == 1) && (z2 == 1) && (z5 == 1) && (z7 == 1) && (z9 == 1) && (z11 == 1) 
     && (z13 == 1)) {
     system("clear");

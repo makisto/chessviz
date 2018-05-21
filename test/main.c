@@ -10,6 +10,8 @@
 #include "rook.h"
 #include <ctest.h>
 
+char s[9][9];
+
 CTEST (p, Correct_p_move)
 {
 char k[5], s[9][9];
