@@ -9,7 +9,6 @@ SRC = src/p.h src/P.h src/board.h src/rook.h src/horse.h src/el.h src/king.h src
 all: bin build test default 
 
 test: bin/chess_test
-	bin/chess_test
 
 default: bin/chess
 
