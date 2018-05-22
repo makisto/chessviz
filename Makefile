@@ -6,11 +6,12 @@ SRC = src/p.h src/P.h src/board.h src/rook.h src/horse.h src/el.h src/king.h src
 
 .PHONY: clean
 
-all: bin build default test
-
-default: bin/chess
+all: bin build test default 
 
 test: bin/chess_test
+	bin/chess_test
+
+default: bin/chess
 
 bin/chess: build/main.o $(BUILD)
 	$(CXX) $(FLAGS) build/main.o $(BUILD) -o bin/chess
@@ -45,7 +46,7 @@ build/queen.o: src/queen.c src/queen.h
 bin/chess_test:build/main_test.o $(BUILD)
 	$(CXX) $(FLAGS) build/main_test.o $(BUILD) -o bin/chess_test
 
-build/main_test.o:test/main.c thirdparty/ctest.h $(SRC)
+build/main_test.o:test/main.c 
 	$(CXX) $(CFLAGS) -I thirdparty -I src -c test/main.c -o build/main_test.o
 
 build:
